@@ -2,19 +2,18 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.theluckystrike/travel-allowance",
   "description": "Work out the travel allowance for a trip on official Polish, UK and US rate tables.",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "repository": {
     "url": "https://github.com/theluckystrike/mcp-servers",
     "source": "github",
     "subfolder": "servers/per-diem"
   },
-  "websiteUrl": "https://mcp.zovo.one/buy/per-diem",
+  "websiteUrl": "https://mcp.zovo.one/s/per-diem",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/theluckystrike/mcp-servers/releases/download/v0.20.0/per-diem.mcpb",
-      "version": "0.20.0",
-      "fileSha256": "49e0755782a830b9184692e8e3b21cab292245156585d3733952ae6607baf2c3",
+      "identifier": "https://github.com/theluckystrike/mcp-servers/releases/download/v0.21.0/per-diem.mcpb",
+      "version": "0.21.0",
       "transport": {
         "type": "stdio"
       },
@@ -25,7 +24,8 @@
           "isRequired": false,
           "isSecret": true
         }
-      ]
+      ],
+      "fileSha256": "5fd36c29003c0480036c33d329fbb62eaa5c8780f0e0a8264a0bfe7f9dbf7d8a"
     }
   ]
 }

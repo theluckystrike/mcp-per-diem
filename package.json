@@ -1,6 +1,6 @@
 {
   "name": "@theluckystrike/mcp-per-diem",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "description": "Daily travel allowances on bundled public rate tables: Poland, HMRC and GSA.",
   "type": "module",
   "bin": {
