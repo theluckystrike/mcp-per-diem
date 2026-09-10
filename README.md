@@ -1,13 +1,45 @@
 # mcp-per-diem
 
+<!-- mirror-seo:start -->
+
+**MCP server for per diem travel allowances.** Statutory travel allowances on the rate tables the tax authorities publish, and the trips you priced with them.
+
+Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine, or hosted with no install.
+
+## Install
+
+**Hosted, nothing to install.** Point an MCP client at `https://mcp.zovo.one/mcp/per-diem` over streamable-http and send `Authorization: Bearer <token>`, where the token is a Pro key or a free anonymous one from <https://mcp.zovo.one/mcp/token>.
+
+**Claude Desktop, one click.** Download `per-diem.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it.
+
+**From source.** The mirror is self-contained: every `@theluckystrike/*` dependency is vendored, so a fresh clone builds with no extra setup.
+
+```sh
+git clone https://github.com/theluckystrike/mcp-per-diem.git
+cd mcp-per-diem
+npm install && npm run build
+```
+
+Then point your client at the built entry point:
+
+```json
+{
+  "mcpServers": {
+    "per-diem": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-per-diem/dist/index.js"]
+    }
+  }
+}
+```
+
+> `@theluckystrike/mcp-per-diem` is **not published on npm yet**, so an `npx -y @theluckystrike/mcp-per-diem` command will fail. The three paths above are the working ones and each is exercised by CI.
+
 ![per-diem demo](https://raw.githubusercontent.com/theluckystrike/mcp-servers/main/assets/demo-per-diem.gif)
-
-**One-click install:** download `per-diem.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it in Claude Desktop.
-
-**Hosted endpoint (no install):** `https://mcp.zovo.one/mcp/per-diem` (streamable-http; send `Authorization: Bearer <Pro key or anonymous token from https://mcp.zovo.one/mcp/token>`).
 
 Read-only mirror of [mcp-servers/servers/per-diem](https://github.com/theluckystrike/mcp-servers/tree/main/servers/per-diem). See [MIRROR.md](MIRROR.md).
 
+<!-- mirror-seo:end -->
 
 Work out the daily travel allowance for a business trip on the rate tables the tax authorities actually publish, and keep the trips you priced. You give it where you went, when you left and when you got back, and which meals somebody else paid for; it gives you the amount per day and the total, in the scheme's own currency, with the partial-day rule and every meal deduction shown next to the number that produced it. Three schemes ship with it: the Polish delegation regulation (domestic and per country), the HMRC benchmark scale rates for travel inside the UK, and the US GSA CONUS standard M&IE and lodging. The tables are bundled files, not a live feed, so the same trip priced twice gives the same answer, and every rate carries the regulation, the source URL and the date it took effect. Nothing leaves your machine.
 
