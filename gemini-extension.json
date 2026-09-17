@@ -1,6 +1,6 @@
 {
   "name": "mcp-per-diem",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "MCP server for per diem travel allowances. Statutory travel allowances on the rate tables the tax authorities publish, and the trips you priced with them.",
   "settings": [
     {
